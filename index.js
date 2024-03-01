@@ -1,3 +1,25 @@
+function getToken1() {
+    var token_ // variable will store the token
+    var clientID = "clientID"; // app clientID
+    var client_secret = "secretKey"; // app clientSecret
+    var caspioTokenUrl = "https://dev75213.service-now.com/oauth_token.do"; // Your application token endpoint  
+    var request = new XMLHttpRequest();
+    var key;
+    request.open("POST", url, true);
+    request.setRequestHeader("Content-type", "application/json");
+    request.send("grant_type=client_credentials&client_id=" + clientID + "&" + "client_secret=" + clientSecret); // specify the credentials to receive the token on request
+    request.onreadystatechange = function () {
+        if (request.readyState == request.DONE) {
+            var response = request.responseText;
+            var obj = JSON.parse(response);
+            key = obj.access_token; //store the value of the accesstoken
+            token_ = key; // store token in your global variable "token_" or you could simply return the value of the access token from the function
+        }
+    }
+    return token_;
+}
+
+
 function restCall() {
     var requestBody = "{\"u_name\":\"Subash\",\"u_email\":\"subash@gmail.com\",\"u_phone_number\":\"7678789890\",\"u_password\":\"Abha@123\"}";
 
