@@ -7,6 +7,7 @@ function getToken(url, clientID, clientSecret, callback) {
     var request = new XMLHttpRequest(); 
     request.open("POST", url, true); 
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    request.setRequestHeader('Access-Control-Allow-Origin', 'https://abhay7860t.github.io/RestApiCall/');
     request.onreadystatechange = function () {
         if (request.readyState == XMLHttpRequest.DONE) {
             if (request.status == 200) {
