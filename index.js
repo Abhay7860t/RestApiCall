@@ -13,16 +13,15 @@ function restCall() {
 
     client.onreadystatechange = function () {
         if (this.readyState == this.DONE) {
-            var data = this.response;
+            // var data = this.response;
 
             document.getElementById("response").innerHTML = this.status + this.response;
             console.log(this.status + this.response, "Response")
-            document.getElementById("response").innerHTML = this.status + this.response;
-            var name = document.getElementById('name').value = data;
-            var email = document.getElementById('email').value = data;
-            var phone = document.getElementById('phone').value = data;
-            var password = document.getElementById('phone').value = data;
-            data = JSON.parse(data);
+            // var name = document.getElementById('name').value = data;
+            // var email = document.getElementById('email').value = data;
+            // var phone = document.getElementById('phone').value = data;
+            // var password = document.getElementById('phone').value = data;
+            // data = JSON.parse(data);
         }
     };
     client.send(requestBody);
