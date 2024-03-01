@@ -7,7 +7,7 @@ function restCall() {
     client.setRequestHeader('Accept', 'application/json');
     client.setRequestHeader('Content-Type', 'application/json');
     client.setRequestHeader('Access-Control-Allow-Origin', 'https://abhay7860t.github.io/RestApiCall/');
-    client.setRequestHeader("Access-Control-Allow-Credentials", "true");
+    // client.setRequestHeader("Access-Control-Allow-Credentials", "true");
 
     //Eg. UserName="admin", Password="admin" for this code sample.
     client.setRequestHeader('Authorization', 'Basic ' + btoa('AbhaySingh' + ':' + 'Abha@123'));
