@@ -1,7 +1,7 @@
 function getToken1() {
     var token_ // variable will store the token
-    var clientID = "clientID"; // app clientID
-    var client_secret = "secretKey"; // app clientSecret
+    var clientID = "d3bde483f964821008c882ecd5e25efa"; // app clientID
+    var client_secret = "?N!Gf3(7WB"; // app clientSecret
     var caspioTokenUrl = "https://dev75213.service-now.com/oauth_token.do"; // Your application token endpoint  
     var request = new XMLHttpRequest();
     var key;
