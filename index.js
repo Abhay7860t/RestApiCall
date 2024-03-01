@@ -16,7 +16,6 @@ function restCall() {
             // var data = this.response;
 
             document.getElementById("response").innerHTML = this.status + this.response;
-            console.log(this.status + this.response, "Response")
             // var name = document.getElementById('name').value = data;
             // var email = document.getElementById('email').value = data;
             // var phone = document.getElementById('phone').value = data;
