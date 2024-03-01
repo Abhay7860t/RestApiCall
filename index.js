@@ -1,5 +1,5 @@
 function restCall() {
-    var requestBody = "{\"u_name\":\"test\",\"u_email\":\"test@gmail.com\",\"u_phone_number\":\"7678985678\",\"u_password\":\"Abha@123\"}";
+    var requestBody = "{\"u_name\":\"AbhaySingh1\",\"u_email\":\"test@gmail.com\",\"u_phone_number\":\"7678985678\",\"u_password\":\"Abha@123\"}";
 
     var client = new XMLHttpRequest();
     client.open("post", "https://dev75213.service-now.com/api/now/table/u_userrecords");
