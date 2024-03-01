@@ -1,3 +1,5 @@
+
+// getting the access token
 var clientId = 'd3bde483f964821008c882ecd5e25efa';
 var clientSecret = '?N!Gf3(7WB';
 var tokenUrl = 'https://dev75213.service-now.com/oauth_token.do'; // Token endpoint provided by your OAuth 2.0 provider
@@ -22,7 +24,7 @@ function generateToken(clientId, clientSecret, tokenUrl) {
         }
     };
 
-    var requestBody = 'grant_type=client_credentials' +
+    var requestBody = 'grant_type=refresh_token' +
         '&client_id=' + encodeURIComponent(clientId) +
         '&client_secret=' + encodeURIComponent(clientSecret);
 
