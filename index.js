@@ -1,13 +1,13 @@
-
-// getting the access token
-var clientId = 'd3bde483f964821008c882ecd5e25efa';
-var clientSecret = '?N!Gf3(7WB';
-var tokenUrl = 'https://dev75213.service-now.com/oauth_token.do'; // Token endpoint provided by your OAuth 2.0 provider
+var clientId = 'cf7bd9446f3002104cd9fe8087906097';
+var clientSecret = 'hkcd(ccxR*';
+var tokenUrl = 'https://dev75213.service-now.com/oauth_token'; // Token endpoint provided by your ServiceNow instance
+var username = 'AbhaySingh';
+var password = 'Abha@123';
 
 function generateToken(clientId, clientSecret, tokenUrl) {
     var xhr = new XMLHttpRequest();
     xhr.open('POST', tokenUrl, true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://abhay7860t.github.io/RestApiCall/');
 
     xhr.onreadystatechange = function () {
@@ -24,19 +24,18 @@ function generateToken(clientId, clientSecret, tokenUrl) {
         }
     };
 
-    var requestBody = 'grant_type=refresh_token' +
-        '&client_id=' + encodeURIComponent(clientId) +
-        '&client_secret=' + encodeURIComponent(clientSecret);
+    var requestBody = JSON.stringify({
+        user_name: username,
+        user_password : password,
+        client_id: clientId,
+        client_secret: clientSecret
+    });
 
     xhr.send(requestBody);
 }
 
 // Call the function to generate the token
 generateToken(clientId, clientSecret, tokenUrl);
-
-
-
-
 
 
 
