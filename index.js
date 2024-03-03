@@ -17,10 +17,11 @@ function generateToken(clientId, clientSecret, tokenUrl) {
                 var accessToken = response.access_token;
                 console.log('Access Token:', accessToken);
                 // Handle the access token
-            } else {
-                console.error('Error:', xhr.status);
-                // Handle the error
-            }
+            } 
+            // else {
+            //     console.error('Error:', xhr.status);
+            //     // Handle the error
+            // }
         }
     };
 
