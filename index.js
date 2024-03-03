@@ -72,11 +72,16 @@
 
 function restCall() {
     // Create an object with dynamic values
+    var name = document.getElementById('').value;
+    var email = document.getElementById('').value;
+    var phoneNumber = document.getElementById('').value;
+    var password = document.getElementById('').value;
+
     var user = {
-        u_name: "Aslin",
-        u_email: "aslin@gmail.com",
-        u_phone_number: "8978990956",
-        u_password: "Aslin@123"
+        u_name: name,
+        u_email: email,
+        u_phone_number: phoneNumber,
+        u_password: password
     };
 
     // Convert the object to JSON string
