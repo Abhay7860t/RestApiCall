@@ -1,5 +1,5 @@
-var clientId = 'cf7bd9446f3002104cd9fe8087906097';
-var clientSecret = 'hkcd(ccxR*';
+var clientId = 'd3bde483f964821008c882ecd5e25efa';
+var clientSecret = '?N!Gf3(7WB';
 var tokenUrl = 'https://dev75213.service-now.com/oauth_token.do'; // Token endpoint provided by your ServiceNow instance
 var username = 'AbhaySingh';
 var password = 'Abha@123';
