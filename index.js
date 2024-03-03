@@ -46,11 +46,44 @@
 
 
 
+// function restCall() {
+//     var requestBody = "{\"u_name\":\"Aslin\",\"u_email\":\"aslin@gmail.com\",\"u_phone_number\":\"8978990956\",\"u_password\":\"Aslin@123\"}";
+
+//     var client = new XMLHttpRequest();
+//     client.open("post", "https://dev75213.service-now.com/api/now/table/u_userrecords");
+
+//     client.setRequestHeader('Accept', 'application/json');
+//     client.setRequestHeader('Content-Type', 'application/json');
+//     client.setRequestHeader('Access-Control-Allow-Origin', 'https://abhay7860t.github.io/RestApiCall/');
+
+//     //Eg. UserName="admin", Password="admin" for this code sample.
+//     client.setRequestHeader('Authorization', 'Basic ' + btoa('AbhaySingh' + ':' + 'Abha@123'));
+
+//     client.onreadystatechange = function () {
+//         if (this.readyState == this.DONE) {
+//             // var data = this.response;
+//             document.getElementById("response").innerHTML = this.status + this.response;
+
+//         }
+//     };
+//     client.send(requestBody);
+// }
+
+
 function restCall() {
-    var requestBody = "{\"u_name\":\"Aslin\",\"u_email\":\"aslin@gmail.com\",\"u_phone_number\":\"8978990956\",\"u_password\":\"Aslin@123\"}";
+    // Create an object with dynamic values
+    var user = {
+        u_name: "Aslin",
+        u_email: "aslin@gmail.com",
+        u_phone_number: "8978990956",
+        u_password: "Aslin@123"
+    };
+
+    // Convert the object to JSON string
+    var requestBody = JSON.stringify(user);
 
     var client = new XMLHttpRequest();
-    client.open("post", "https://dev75213.service-now.com/api/now/table/u_userrecords");
+    client.open("POST", "https://dev75213.service-now.com/api/now/table/u_userrecords");
 
     client.setRequestHeader('Accept', 'application/json');
     client.setRequestHeader('Content-Type', 'application/json');
@@ -63,11 +96,11 @@ function restCall() {
         if (this.readyState == this.DONE) {
             // var data = this.response;
             document.getElementById("response").innerHTML = this.status + this.response;
-
         }
     };
     client.send(requestBody);
 }
+
 
 
 
