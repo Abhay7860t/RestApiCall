@@ -35,7 +35,7 @@ function generateToken(clientId, clientSecret, tokenUrl) {
 }
 
 // Call the function to generate the token
-generateToken(clientId, clientSecret, tokenUrl);
+//generateToken(clientId, clientSecret, tokenUrl);
 
 
 
