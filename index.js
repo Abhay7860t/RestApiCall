@@ -31,7 +31,7 @@ function generateToken(clientId, clientSecret, tokenUrl) {
         client_secret: clientSecret
     });
 
-    xhr.send(requestBody);
+    //xhr.send(requestBody);
 }
 
 // Call the function to generate the token
