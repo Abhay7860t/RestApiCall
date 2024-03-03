@@ -70,13 +70,15 @@
 // }
 
 
+
 function restCall() {
-    // Create an object with dynamic values
+    
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
     var phoneNumber = document.getElementById('phone').value;
     var password = document.getElementById('password').value;
 
+    // Create an object with dynamic values
     var user = {
         u_name: name,
         u_email: email,
