@@ -67,6 +67,8 @@ function generateToken(clientId, clientSecret, tokenUrl) {
 
 
 
+// dynamic records
+
 // function restCall() {
 
 //     var name = document.getElementById('name').value;
