@@ -112,23 +112,51 @@
 // work item 2
 // getting data from the servicenow table and show in the browser console.
 
+// function getData() {
+//     var requestBody = ""; 
+    
+//     var client=new XMLHttpRequest();
+//     client.open("get","https://dev75213.service-now.com/api/now/table/incident?sysparm_limit=1");
+    
+//     client.setRequestHeader('Accept','application/json');
+//     client.setRequestHeader('Content-Type','application/json');
+    
+//     //Eg. UserName="admin", Password="admin" for this code sample.
+//     client.setRequestHeader('Authorization', 'Basic '+btoa('AbhaySingh'+':'+'Abha@123'));
+    
+//     client.onreadystatechange = function() { 
+//         if(this.readyState == this.DONE) {
+//             document.getElementById("response").innerHTML= this.status + this.response; 
+//         }
+//     }; 
+//     client.send(requestBody);
+// }
+
+
 function getData() {
     var requestBody = ""; 
     
-    var client=new XMLHttpRequest();
-    client.open("get","https://dev75213.service-now.com/api/now/table/incident?sysparm_limit=1");
+    var client = new XMLHttpRequest();
+    client.open("GET", "https://dev75213.service-now.com/api/now/table/incident?sysparm_limit=1");
     
-    client.setRequestHeader('Accept','application/json');
-    client.setRequestHeader('Content-Type','application/json');
+    client.setRequestHeader('Accept', 'application/json');
+    client.setRequestHeader('Content-Type', 'application/json');
     
     //Eg. UserName="admin", Password="admin" for this code sample.
-    client.setRequestHeader('Authorization', 'Basic '+btoa('AbhaySingh'+':'+'Abha@123'));
+    client.setRequestHeader('Authorization', 'Basic ' + btoa('AbhaySingh' + ':' + 'Abha@123'));
     
-    // client.onreadystatechange = function() { 
-    //     if(this.readyState == this.DONE) {
-    //         document.getElementById("response").innerHTML= this.status + this.response; 
-    //     }
-    // }; 
+    client.onreadystatechange = function() { 
+        if (this.readyState == this.DONE) {
+            if (this.status === 200) {
+                var response = JSON.parse(this.responseText);
+                console.log("Response:", response);
+                // You can handle the response here, for example:
+                // document.getElementById("response").innerHTML = JSON.stringify(response);
+            } else {
+                console.error("Error:", this.status, this.statusText);
+            }
+        }
+    }; 
     client.send(requestBody);
 }
 
