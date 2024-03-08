@@ -110,7 +110,7 @@
 
 
 // work item 2
-
+// getting data from the servicenow table and show in the browser console.
 
 function getData() {
     var requestBody = ""; 
@@ -124,11 +124,11 @@ function getData() {
     //Eg. UserName="admin", Password="admin" for this code sample.
     client.setRequestHeader('Authorization', 'Basic '+btoa('AbhaySingh'+':'+'Abha@123'));
     
-    client.onreadystatechange = function() { 
-        if(this.readyState == this.DONE) {
-            document.getElementById("response").innerHTML=this.status + this.response; 
-        }
-    }; 
+    // client.onreadystatechange = function() { 
+    //     if(this.readyState == this.DONE) {
+    //         document.getElementById("response").innerHTML= this.status + this.response; 
+    //     }
+    // }; 
     client.send(requestBody);
 }
 
