@@ -1,39 +1,40 @@
-var clientId = 'd3bde483f964821008c882ecd5e25efa';
-var clientSecret = '?N!Gf3(7WB';
-var tokenUrl = 'https://dev75213.service-now.com/oauth_token.do'; // Token endpoint provided by your ServiceNow instance
-var username = 'AbhaySingh';
-var password = 'Abha@123';
+// work item 1
+// var clientId = 'd3bde483f964821008c882ecd5e25efa';
+// var clientSecret = '?N!Gf3(7WB';
+// var tokenUrl = 'https://dev75213.service-now.com/oauth_token.do'; // Token endpoint provided by your ServiceNow instance
+// var username = 'AbhaySingh';
+// var password = 'Abha@123';
 
-function generateToken(clientId, clientSecret, tokenUrl) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', tokenUrl, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://abhay7860t.github.io/RestApiCall/');
+// function generateToken(clientId, clientSecret, tokenUrl) {
+//     var xhr = new XMLHttpRequest();
+//     xhr.open('POST', tokenUrl, true);
+//     xhr.setRequestHeader('Content-Type', 'application/json');
+//     xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://abhay7860t.github.io/RestApiCall/');
 
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                var response = JSON.parse(xhr.responseText);
-                var accessToken = response.access_token;
-                console.log('Access Token:', accessToken);
-                // Handle the access token
-            } 
-            else {
-                console.error('Error:', xhr.status);
-                // Handle the error
-            }
-        }
-    };
+//     xhr.onreadystatechange = function () {
+//         if (xhr.readyState === XMLHttpRequest.DONE) {
+//             if (xhr.status === 200) {
+//                 var response = JSON.parse(xhr.responseText);
+//                 var accessToken = response.access_token;
+//                 console.log('Access Token:', accessToken);
+//                 // Handle the access token
+//             } 
+//             else {
+//                 console.error('Error:', xhr.status);
+//                 // Handle the error
+//             }
+//         }
+//     };
 
-    var requestBody = JSON.stringify({
-        user_name: username,
-        user_password : password,
-        client_id: clientId,
-        client_secret: clientSecret
-    });
+//     var requestBody = JSON.stringify({
+//         user_name: username,
+//         user_password : password,
+//         client_id: clientId,
+//         client_secret: clientSecret
+//     });
 
-    xhr.send(requestBody);
-}
+//     xhr.send(requestBody);
+// }
 
 
 
@@ -108,6 +109,24 @@ function generateToken(clientId, clientSecret, tokenUrl) {
 // }
 
 
+// work item 2
+var requestBody = ""; 
+
+var client=new XMLHttpRequest();
+client.open("get","https://dev75213.service-now.com/api/now/table/incident?sysparm_limit=1");
+
+client.setRequestHeader('Accept','application/json');
+client.setRequestHeader('Content-Type','application/json');
+
+//Eg. UserName="admin", Password="admin" for this code sample.
+client.setRequestHeader('Authorization', 'Basic '+btoa('AbhaySingh'+':'+'Abha@123'));
+
+client.onreadystatechange = function() { 
+	if(this.readyState == this.DONE) {
+		document.getElementById("response").innerHTML=this.status + this.response; 
+	}
+}; 
+client.send(requestBody);
 
 
 
