@@ -70,48 +70,49 @@
 
 // dynamic records
 
-// function restCall() {
+function restCall() {
 
-//     var name = document.getElementById('name').value;
-//     var email = document.getElementById('email').value;
-//     var phoneNumber = document.getElementById('phone').value;
-//     var password = document.getElementById('password').value;
+     var name = document.getElementById('name').value;
+     var email = document.getElementById('email').value;
+     var phoneNumber = document.getElementById('phone').value;
+     var password = document.getElementById('password').value;
 
-//     // Create an object with dynamic values
-//     var user = {
-//         u_name: name,
-//         u_email: email,
-//         u_phone_number: phoneNumber,
-//         u_password: password
-//     };
+     // Create an object with dynamic values
+     var user = {
+         u_name: name,
+         u_email: email,
+         u_phone_number: phoneNumber,
+         u_password: password
+     };
 
-//     // Convert the object to JSON string
-//     var requestBody = JSON.stringify(user);
+    // Convert the object to JSON string
+     var requestBody = JSON.stringify(user);
 
-//     var client = new XMLHttpRequest();
-//     client.open("POST", "https://dev75213.service-now.com/api/now/table/u_userrecords");
+     var client = new XMLHttpRequest();
+     client.open("POST", "https://dev75213.service-now.com/api/now/table/u_userrecords");
 
-//     client.setRequestHeader('Accept', 'application/json');
-//     client.setRequestHeader('Content-Type', 'application/json');
-//     client.setRequestHeader('Access-Control-Allow-Origin', 'https://abhay7860t.github.io/RestApiCall/');
+     client.setRequestHeader('Accept', 'application/json');
+     client.setRequestHeader('Content-Type', 'application/json');
+     client.setRequestHeader('Access-Control-Allow-Origin', 'https://abhay7860t.github.io/RestApiCall/');
 
 //     //Eg. UserName="admin", Password="admin" for this code sample.
-//     client.setRequestHeader('Authorization', 'Basic ' + btoa('AbhaySingh' + ':' + 'Abha@123'));
+     client.setRequestHeader('Authorization', 'Basic ' + btoa('AbhaySingh' + ':' + 'Abha@123'));
 
-//     client.onreadystatechange = function () {
-//         if (this.readyState == this.DONE) {
-//             // var data = this.response;
-//             document.getElementById("response").innerHTML = this.status + this.response;
-//         }
-//     };
+     client.onreadystatechange = function () {
+         if (this.readyState == this.DONE) {
+             var data = this.response;
+             document.getElementById("response").innerHTML = this.status + this.response;
+         }
+     };
 
-//     client.send(requestBody);
-// }
+    client.send(requestBody);
+ }
 
 
 // work item 2
 // getting data from the servicenow table and show in the browser console.
 
+/*
 function getData() {
     var requestBody = ""; 
     
@@ -138,6 +139,6 @@ function getData() {
     }; 
     client.send(requestBody);
 }
-
+*/
 
 
